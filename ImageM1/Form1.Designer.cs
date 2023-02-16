@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Zassou");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bokusou");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Clicked");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Calc_Time");
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonOpenImage = new System.Windows.Forms.Button();
             this.pictureBoxZassou = new System.Windows.Forms.PictureBox();
             this.pictureBoxBokusou = new System.Windows.Forms.PictureBox();
-            this.labelDisZassou = new System.Windows.Forms.Label();
-            this.labelDisBokusou = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,13 +50,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxGLCMBokusou = new System.Windows.Forms.PictureBox();
             this.pictureBoxGLCMZassou = new System.Windows.Forms.PictureBox();
-            this.labelDis = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.buttonBinarizeZassou = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxZassou)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBokusou)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGLCMBokusou)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGLCMZassou)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -97,36 +104,6 @@
             this.pictureBoxBokusou.TabIndex = 6;
             this.pictureBoxBokusou.TabStop = false;
             // 
-            // labelDisZassou
-            // 
-            this.labelDisZassou.AutoSize = true;
-            this.labelDisZassou.Location = new System.Drawing.Point(142, 675);
-            this.labelDisZassou.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDisZassou.Name = "labelDisZassou";
-            this.labelDisZassou.Size = new System.Drawing.Size(130, 25);
-            this.labelDisZassou.TabIndex = 8;
-            this.labelDisZassou.Text = "labelDisZassou";
-            // 
-            // labelDisBokusou
-            // 
-            this.labelDisBokusou.AutoSize = true;
-            this.labelDisBokusou.Location = new System.Drawing.Point(244, 675);
-            this.labelDisBokusou.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDisBokusou.Name = "labelDisBokusou";
-            this.labelDisBokusou.Size = new System.Drawing.Size(143, 25);
-            this.labelDisBokusou.TabIndex = 9;
-            this.labelDisBokusou.Text = "labelDisBokusou";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 675);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 25);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Dissimilarity";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -160,7 +137,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(481, 438);
+            this.label7.Location = new System.Drawing.Point(372, 417);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 25);
@@ -170,7 +147,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(510, 515);
+            this.label8.Location = new System.Drawing.Point(391, 455);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 25);
@@ -180,7 +157,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(510, 545);
+            this.label9.Location = new System.Drawing.Point(502, 455);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(21, 25);
@@ -190,18 +167,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(459, 570);
+            this.label10.Location = new System.Drawing.Point(678, 455);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 25);
+            this.label10.Size = new System.Drawing.Size(101, 25);
             this.label10.TabIndex = 30;
-            this.label10.Text = "雑草？";
+            this.label10.Text = "雑草？(Dis)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(538, 515);
+            this.labelX.Location = new System.Drawing.Point(419, 455);
             this.labelX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(60, 25);
@@ -211,7 +188,7 @@
             // labelY
             // 
             this.labelY.AutoSize = true;
-            this.labelY.Location = new System.Drawing.Point(538, 545);
+            this.labelY.Location = new System.Drawing.Point(531, 455);
             this.labelY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(59, 25);
@@ -221,7 +198,7 @@
             // labelIsZassou
             // 
             this.labelIsZassou.AutoSize = true;
-            this.labelIsZassou.Location = new System.Drawing.Point(535, 570);
+            this.labelIsZassou.Location = new System.Drawing.Point(787, 455);
             this.labelIsZassou.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIsZassou.Name = "labelIsZassou";
             this.labelIsZassou.Size = new System.Drawing.Size(118, 25);
@@ -257,34 +234,71 @@
             this.pictureBoxGLCMZassou.TabIndex = 36;
             this.pictureBoxGLCMZassou.TabStop = false;
             // 
-            // labelDis
+            // listView1
             // 
-            this.labelDis.AutoSize = true;
-            this.labelDis.Location = new System.Drawing.Point(538, 490);
-            this.labelDis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDis.Name = "labelDis";
-            this.labelDis.Size = new System.Drawing.Size(74, 25);
-            this.labelDis.TabIndex = 39;
-            this.labelDis.Text = "labelDis";
-            this.labelDis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
+            this.listView1.Location = new System.Drawing.Point(391, 483);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(691, 258);
+            this.listView1.TabIndex = 41;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // label2
+            // columnHeader1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(418, 490);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 25);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Dissimilarity";
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Dis";
+            this.columnHeader2.Width = 200;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Hom";
+            this.columnHeader3.Width = 200;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ASM";
+            this.columnHeader4.Width = 200;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(678, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(505, 375);
+            this.pictureBox2.TabIndex = 42;
+            this.pictureBox2.TabStop = false;
+            // 
+            // buttonBinarizeZassou
+            // 
+            this.buttonBinarizeZassou.Location = new System.Drawing.Point(544, 215);
+            this.buttonBinarizeZassou.Name = "buttonBinarizeZassou";
+            this.buttonBinarizeZassou.Size = new System.Drawing.Size(112, 34);
+            this.buttonBinarizeZassou.TabIndex = 43;
+            this.buttonBinarizeZassou.Text = "画像変換";
+            this.buttonBinarizeZassou.UseVisualStyleBackColor = true;
+            this.buttonBinarizeZassou.Click += new System.EventHandler(this.buttonBinarizeZassou_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 812);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelDis);
+            this.Controls.Add(this.buttonBinarizeZassou);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBoxGLCMBokusou);
             this.Controls.Add(this.pictureBoxGLCMZassou);
             this.Controls.Add(this.label1);
@@ -298,9 +312,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelDisBokusou);
-            this.Controls.Add(this.labelDisZassou);
             this.Controls.Add(this.pictureBoxBokusou);
             this.Controls.Add(this.pictureBoxZassou);
             this.Controls.Add(this.buttonOpenImage);
@@ -313,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBokusou)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGLCMBokusou)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGLCMZassou)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,9 +336,6 @@
         private Button buttonOpenImage;
         private PictureBox pictureBoxZassou;
         private PictureBox pictureBoxBokusou;
-        private Label labelDisZassou;
-        private Label labelDisBokusou;
-        private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -341,8 +350,12 @@
         private Label label1;
         private PictureBox pictureBoxGLCMBokusou;
         private PictureBox pictureBoxGLCMZassou;
-        private Label labelDis;
-        private Button buttonDis;
-        private Label label2;
+        private ListView listView1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private PictureBox pictureBox2;
+        private Button buttonBinarizeZassou;
     }
 }
